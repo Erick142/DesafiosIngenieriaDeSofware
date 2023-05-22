@@ -99,10 +99,10 @@ export default {
           id:1,marca:'lol',año: 2022,color:'negro', precio: 200, turbo: 'si', tipo: 'Sedan', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
         },
         {
-          id:2,marca:'peo',año: 2022,color:'gris', precio: 300, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
+          id:2,marca:'a',año: 2022,color:'gris', precio: 300, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
         },
         {
-          id:3,marca:'peo',año: 2022,color:'negro', precio: 400, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
+          id:3,marca:'a',año: 2022,color:'negro', precio: 400, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
         }
       ],
       filtro:{precio:0,tipo:"",color:""},

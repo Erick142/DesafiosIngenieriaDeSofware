@@ -9,6 +9,9 @@ COPY package*.json ./
 
 RUN npm install -g
 
+RUN npm i bootstrap@5.3.0-alpha3
+RUN npm install axios
+
 COPY . .
 
 

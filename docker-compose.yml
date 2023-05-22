@@ -1,0 +1,21 @@
+version: '3'
+services:
+  frontend:
+    container_name: "front-end"
+    build:
+      context: ./front-end
+    ports:
+      - 8081:8081
+    networks:
+      - red
+  backend:
+    container_name: "back-end"
+    build: 
+      context: ./back-end
+    ports:
+      - 8080:8080
+    networks:
+      - red
+networks:
+  red:
+    driver: bridge

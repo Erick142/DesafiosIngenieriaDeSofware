@@ -1,6 +1,6 @@
-package com.autos.Service;
+package com.demo.Service;
 
-import com.autos.api.model.Auto;
+import com.demo.model.Auto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,12 +23,12 @@ public class ServiceAutos{
 
     public String elegirTipo(){
         String tipos[] = new String[]{"Sedan","Camioneta","SUV"};
-        return tipos[(int)(Math.random() * tipos.length)+1];
+        return tipos[(int)(Math.random() * tipos.length)];
     }
 
     public String elegirMotor(String tipo){
         String motor="";
-        int numero=(int)(Math.random() * 3)+1;
+        int numero=(int)(Math.random() * 3);
 
         String motorSedan[] = new String[]{"1.4cc","1.6cc","2.0cc"};
         String motorCamioneta[] = new String[]{"2.4cc","3.0cc","4.0cc"};
@@ -49,13 +49,13 @@ public class ServiceAutos{
         String marca="";
 
         String marcas[] = new String[]{"Toyota","Volkswagen","Chevrolet","Ford","Nissan"};
-        marca= marcas[(int)(Math.random() * marcas.length)+1];
+        marca= marcas[(int)(Math.random() * marcas.length)];
         return marca;
     }
 
     public String elegirColor(){
         String colores[] = new String[]{"Blanco","Rojo","Azul","Negro","Gris"};
-        return colores[(int)(Math.random() * colores.length)+1];
+        return colores[(int)(Math.random() * colores.length)];
     }
 
     public int elegirCabinas(){

@@ -29,8 +29,8 @@
               <select id="tipo" class="form-control" required placeholder="Tipo" v-model="filtro.tipo">
                 <option value="" selected>seleccionar</option>
                 <option value="Sedan">Sedan</option>
-                <option value="camioneta">camioneta</option>
-                <option value="suv">SUV</option>
+                <option value="Camioneta">Camioneta</option>
+                <option value="SUV">SUV</option>
               </select>
               <label for="tipo">Tipo</label>
             </div>
@@ -39,11 +39,11 @@
             <div class="form-floating">
               <select id="color" class="form-control" required placeholder="Color" v-model="filtro.color">
                 <option value="" selected>seleccionar</option>
-                <option value="rojo">rojo</option>
-                <option value="negro">negro</option>
-                <option value="blanco">blanco</option>
-                <option value="gris">gris</option>
-                <option value="plata">plata</option>
+                <option value="Blanco">Blanco</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Azul">Azul</option>
+                <option value="Negro">Negro</option>
+                <option value="Gris">Gris</option>
               </select>
               <label for="color">Color</label>
             </div>
@@ -73,13 +73,13 @@
         <tr v-for="auto in filtrarAutos" :key="auto.id">
           <th scope="row">{{ auto.id }}</th>
           <td>{{ auto.marca }}</td>
-          <td>{{ auto.año }}</td>
+          <td>{{ auto.anio }}</td>
           <td>{{ auto.color }}</td>
           <td>{{ auto.precio }}</td>
           <td>{{ auto.turbo }}</td>
           <td>{{ auto.tipo }}</td>
           <td>{{ auto.motor }}</td>
-          <td>{{ auto.cabina }}</td>
+          <td>{{ auto.cabinas }}</td>
           <td>{{ auto.sunroof }}</td>
           <td>{{ auto.popularidad }}</td>
         </tr>
@@ -94,17 +94,7 @@ export default {
   name: 'App',
   data(){
     return{
-      autos:[
-        {
-          id:1,marca:'lol',año: 2022,color:'negro', precio: 200, turbo: 'si', tipo: 'Sedan', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
-        },
-        {
-          id:2,marca:'a',año: 2022,color:'gris', precio: 300, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
-        },
-        {
-          id:3,marca:'a',año: 2022,color:'negro', precio: 400, turbo: 'si', tipo: 'camioneta', motor: 'motor xd', cabina: '2', sunroof:2,popularidad:10
-        }
-      ],
+      autos:[],
       filtro:{precio:0,tipo:"",color:""},
       cantidad:0
     }
@@ -128,9 +118,9 @@ export default {
   },
   methods:{
     async peticion(){
-      await axios.post("url/"+this.cantidad)
+      await axios.post("http://localhost:8080/generar/"+this.cantidad)
       .then(respuesta=>{
-        console.log(respuesta.data);
+        this.autos=respuesta.data;
       })
       .catch(error=>{
         console.log(error)
